@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/player">
+
+    <fragment
+        android:id="@+id/player"
+        android:name="com.aking.music.ui.PlayerFragment"
+        android:label="player"
+        tools:layout="@layout/fragment_player">
+
+        <action
+            android:id="@+id/action_player_to_music_list"
+            app:destination="@id/musicList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/musicList"
+        android:name="com.aking.music.ui.MusicListFragment"
+        android:label="musicList"
+        tools:layout="@layout/fragment_music_list" />
+
+    <!-- Add other fragment destinations similarly. -->
+</navigation>
