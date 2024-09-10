@@ -2,7 +2,9 @@ package com.aking.music.ui
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.aking.base.app
 import com.aking.base.base.BaseFragment
+import com.aking.music.LiveViewModel
 import com.aking.music.R
 import com.aking.music.databinding.FragmentPlayerBinding
 import com.aking.music.vm.PlayerViewModel
@@ -20,6 +22,7 @@ class PlayerFragment : BaseFragment<FragmentPlayerBinding>(R.layout.fragment_pla
     private val viewModel: PlayerViewModel by viewModels()
 
     override fun FragmentPlayerBinding.initView() {
+        vm = LiveViewModel(app)
         root.setOnClickListener {
             findNavController().navigate(R.id.action_player_to_music_list)
         }
